@@ -12,9 +12,9 @@ blog_zinnia
     - myapp       # source code for myapp(customized blog_zinnia)
     - myproject   # setting files for my project
 
-# conf file for using Apache and Django together
+//conf file for using Apache and Django together
 blog_zinnia/myproject/conf/mysite.conf
 
-# Test project, You can ignore it.
+//Test project, You can ignore it.
 blog_zinnia/myproject/blog
 blog_zinnia/myproject/myapp
