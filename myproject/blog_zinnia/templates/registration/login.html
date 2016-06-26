@@ -1,0 +1,46 @@
+{% extends "zinnia/base.html" %}
+{% load staticfiles %}
+
+{% block link %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'component/sidebar.html' %}
+{% endblock sidebar %}
+
+
+
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <!-- ref : http://blog.hannal.com/2015/06/start_with_django_webframework_08/ -->
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>No authority</p>
+        {% else %}
+        <p>Login needed</p>
+        {% endif %}
+    {% endif %}
+
+<div class="login">
+     <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+        <h3 style="margin-bottom: 5px; padding-top: 20px;">Username : </h3>
+        <input type="text" class="form-control" name="username" placeholder="Username" autofocus>
+
+        <h3 style="margin-bottom: 5px; padding-top: 20px;">Password : </h3>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+
+         <p style="margin-bottom: 5px; padding-top: 20px;"><input type="submit" class="button" value="login"/></p>
+
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
+
+{% endblock %}
+

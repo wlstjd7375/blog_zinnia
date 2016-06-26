@@ -1,0 +1,28 @@
+{% extends "zinnia/entry_list.html" %}
+{% load i18n %}
+{% load zinnia %}
+{% load staticfiles %}
+
+{% block link %}
+{{ block.super }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{% static 'js/popover.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/popover.css' %}">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+{% endblock %}
+
+
+{% block content-loop %}
+    {% for e in entries %}
+        {% include 'component/entry_content.html' with object=e.entry entry_date=e.date %}
+    {% endfor %}
+{% endblock content-loop %}
+
+{% block sidebar %}
+    {% include 'component/sidebar.html' %}
+{% endblock sidebar %}

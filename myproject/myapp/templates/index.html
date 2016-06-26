@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- list section -->
+<div class="section">
+{% for item in list %}
+	<div class="section-block">
+		<div class="section-img">
+			<img src="{{item.image}}"/>
+		</div>
+		<div class="section-title">
+			<p><a href="{% url 'detail' post_id=item.post.pk %}">{{item.post.title}}</a></p>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<!-- !list section-->
+<div class="bottom-bar">
+	<a class="button" href="{% url 'upload' %}">upload</a>
+	
+	{% if user.is_authenticated %}
+	<a class="button" href="{% url 'logout' %}">logout</a>
+	{% endif %}
+</div>
+
+{% endblock content %}
+

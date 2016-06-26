@@ -1,0 +1,15 @@
+{% extends "zinnia/base.html" %}
+
+{% block sidebar %}
+    {% include 'component/sidebar.html' %}
+{% endblock sidebar %}
+
+{% block content %}
+    <h1>Author Info : {{ author.username }}</h1>
+    <h3>name : {{ author.name }}</h3>
+    <h3>email : {{ author.email }}</h3>
+    <h3>url : <a href="http://{{ author.url }}">{{ author.url }}</a></h3>
+    <h3>intro : {{ author.intro }}</h3>
+    <h3>profile : <p><img src="{{ author.profile }}"/></p></h3>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "zinnia/_entry_detail.html" %}
+{% load i18n %}
+{% load zinnia %}
+{% load tags %}
+
+{% block entry-title %}
+    <h2 class="entry-title" itemprop="name">
+        <a href="{% url 'entry_detail' pk=object.pk date=entry_date slug=object.slug %}" title="{{ object.title }}" rel="bookmark" itemprop="url">
+        {{ object.title|widont }}
+        </a>
+    </h2>
+{% endblock entry-title %}
+
+
+{% block entry-authors %}
+    {% with authors=object.authors.all %}
+    {% if authors|length %}
+    {% trans "Written by" %}
+    {% for author in authors %}
+        {% get_popover_content author as content %}
+        <span class="vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author" itemprop="url"
+                data-toggle="popover" data-html="true" data-container="body"
+                title="<a href='{% url 'author_detail' author=author.username %}'>{{ author.username }}</a>"
+                data-content="{{ content }}">{{ author }}</a>
+        </span>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    {% trans "on" context "on date" %}
+    {% else %}
+    {% trans "Written on" %}
+    {% endif %}
+    {% endwith %}
+{% endblock entry-authors %}
+
+
+{% block entry-footer %}{% endblock %}

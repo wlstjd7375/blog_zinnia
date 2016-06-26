@@ -1,0 +1,125 @@
+a {
+	text-decoration: none;
+}
+
+.bottom-bar {
+	width: 100%;
+	text-align: center;
+}
+
+.button {
+    	display: inline-block;
+    	background-color: #2DBF14;
+    	border-radius: 5px;
+    	border-color: #ffffff;
+    	padding: 10px;
+    	font: 14px 'Nanum Gothic';
+	font-weight: 800;
+    	color: #ffffff;
+    	text-decoration: none;
+}
+
+.section {
+	width: 100%;
+	
+}
+
+.section-block {
+	display: inline-block;
+	width: 20vw;
+	height: 25vw;
+	padding: 10px;
+}
+
+.section-img {
+	width: 99%;
+	height: 79%;
+}
+
+.section-title {
+	width: 99%;
+	height: 19%;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+.form-control {
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+border-color: #66afe9;
+outline: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.form-group-post {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+
+.form-title {
+	width: 100%;
+	padding: 20px;
+}
+
+.form-text {
+	width: 100%;
+	padding: 20px;
+}
+
+.form-image {
+	padding: 20px;
+}
+
+.post-content {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+
+.post-img {
+	width : 100%;
+	height: auto;
+}
+
+.form-group-login {
+	width: 500px;
+	margin: auto;
+	height: 54px;
+	padding-bottom: 10px;
+}
+
+.form-label {
+	width: 30%;
+	float: left;
+	font-weight: 800;
+	line-height: 34px;
+	vertical-align: middle;
+}
+
+.form-area {
+	width: 70%;
+	float: left;
+}
+
